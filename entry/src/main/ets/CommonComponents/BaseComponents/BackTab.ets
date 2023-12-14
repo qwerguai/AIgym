@@ -6,7 +6,7 @@ export default struct BackTab {
   // 标题
   private title:string;
   // 右边图标 -- 图片路径
-  private rightIcon:string
+  private  rightIcon:ResourceStr
 
   // 点击返回
   handleBack(){
@@ -20,6 +20,7 @@ export default struct BackTab {
         Image($r('app.media.back'))
           .width('30rpx')
           .height('30rpx')
+          .margin({right:20,left:10})
 
         Text(this.title)
           .fontSize('20rpx')
@@ -28,9 +29,11 @@ export default struct BackTab {
       }
       .height('100%')
 
-      if (this.rightIcon){
-        Image($r(this.rightIcon))
-          .width('20%')
+      if (this.rightIcon!==''){
+        Image(this.rightIcon)
+          .width('30rpx')
+          .height('30rpx')
+          .margin({right:20,left:10})
       }
 
     }
