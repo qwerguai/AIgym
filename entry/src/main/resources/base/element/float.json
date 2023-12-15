@@ -1,0 +1,37 @@
+{
+  "float": [
+    {
+      "name": "LOGO_INFO_size",
+      "value": "100fp"
+    },
+
+    {
+      "name": "logo_info_radius",
+      "value": "12vp"
+    },
+    {
+      "name": "baseGreen",
+      "value": "#008080"
+    },
+    {
+      "name": "register_title",
+      "value": "30fp"
+    },
+    {
+      "name": "register_title_info",
+      "value": "16fp"
+    },
+    {
+      "name": "login_register_input_height",
+      "value": "40vp"
+    },
+    {
+      "name": "big_text_size",
+      "value": "18fp"
+    },
+    {
+      "name": "base_margin",
+      "value": "20vp"
+    }
+  ]
+}

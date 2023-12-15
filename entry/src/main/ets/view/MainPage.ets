@@ -1,6 +1,5 @@
-import Home from '../view/tab/Home'
-import Setting from '../view/tab/Setting'
-// import CommonConstants from '../common/constants/CommonConstants';
+import Home from '../pages/Home'
+import Setting from '../pages/Setting'
 
 @Entry
 @Component

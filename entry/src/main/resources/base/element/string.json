@@ -11,6 +11,46 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "logo_info",
+      "value": "相信技术 传递价值"
+    },
+    {
+      "name": "logo_title",
+      "value": "notion"
+    },
+    {
+      "name": "MAIN_PAGE_URL",
+      "value": "pages/MainPage"
+    },
+    {
+      "name": "login_title",
+      "value": "欢迎注册"
+    },
+    {
+      "name": "login_title_info",
+      "value": "注册登录账号即可查看更多精彩内容"
+    },
+    {
+      "name": "register_user",
+      "value": "请输入账号"
+    },
+    {
+      "name": "register_password",
+      "value": "请输入密码"
+    },
+    {
+      "name":"register",
+      "value": "注册"
+    },
+    {
+      "name": "input_empty_tips",
+      "value": "请输入正确的账号或密码！"
+    },
+    {
+      "name": "agreement",
+      "value": "请阅读并勾选隐私协议！"
     }
   ]
 }

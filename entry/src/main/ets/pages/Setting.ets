@@ -1,3 +1,4 @@
+@Entry
 @Component
 export default struct Setting {
   build() {
