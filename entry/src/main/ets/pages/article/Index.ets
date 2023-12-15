@@ -1,9 +1,9 @@
 @Entry
 @Component
-export default struct Setting {
+export default struct Home {
   build() {
     Column() {
-      Text('Setting界面')
+      Text('文章')
         .fontColor('#f00')
         .fontSize(16)
         .fontWeight(FontWeight.Medium)

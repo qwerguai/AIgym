@@ -1,12 +1,12 @@
 {
   "float": [
     {
-      "name": "LOGO_INFO_size",
+      "name": "size_100vp",
       "value": "100fp"
     },
 
     {
-      "name": "logo_info_radius",
+      "name": "radius_12vp",
       "value": "12vp"
     },
     {
@@ -14,20 +14,37 @@
       "value": "#008080"
     },
     {
-      "name": "register_title",
+      "name": "font_size_30fp",
       "value": "30fp"
     },
     {
-      "name": "register_title_info",
+      "name": "font_size_16fp",
       "value": "16fp"
     },
+
     {
-      "name": "login_register_input_height",
+      "name": "font_size_18fp",
+      "value": "18fp"
+    },
+    {
+      "name": "font_size_40fp",
+      "value": "40fp"
+    },
+    {
+      "name": "font_size_14fp",
+      "value": "14fp"
+    },
+    {
+      "name": "size_40vp",
       "value": "40vp"
     },
     {
-      "name": "big_text_size",
-      "value": "18fp"
+      "name": "size_50vp",
+      "value": "50vp"
+    },
+    {
+      "name": "size_12vp",
+      "value": "12vp"
     },
     {
       "name": "base_margin",

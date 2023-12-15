@@ -1,6 +1,7 @@
 import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
-import { PageConstants } from '../constants/PageConstants'
+import { Constants } from '../../common/Constants'
+import { StyleConstants } from '../../common/StyleConstants'
 
 
 
@@ -43,7 +44,7 @@ struct Register {
         this.timer = setTimeout(() => {
           this.isShowLoadingProgress = false;
           router.replaceUrl({ url: 'view/MainPage' });
-        }, PageConstants.DELAY_TIME);
+        }, Constants.DELAY_TIME);
     }
 }
 
@@ -56,9 +57,9 @@ struct Register {
         Column() {
           Text($r('app.string.login_title'))
             .TextStyle()
-            .fontSize($r('app.float.register_title'))
+            .fontSize($r('app.float.font_size_30fp'))
           Text($r('app.string.login_title_info'))
-            .fontSize($r('app.float.register_title_info'))
+            .fontSize($r('app.float.font_size_16fp'))
             .TextStyle()
         }
         .justifyContent(FlexAlign.Center)
@@ -126,19 +127,19 @@ struct Register {
         if (!this.isShowLoadingProgress){
           Text($r('app.string.register'))
             .fontSize('16fp')
-            .fontColor($r('app.color.baseColor'))
+            .fontColor(StyleConstants.BASE_GREY)
         }else{
           LoadingProgress()
             .width(30)
             .height(30)
             .margin({ left: 12 })
-            .color($r('app.color.baseColor'))
+            .color(StyleConstants.BASE_GREY)
         }
       }
     }
-    .width(PageConstants.FULL_BUTTON)
-    .backgroundColor($r('app.color.baseGreen'))
-    .height($r('app.float.login_register_input_height'))
+    .width(StyleConstants.FULL_BUTTON)
+    .backgroundColor(StyleConstants.BASE_STYLE.fontColor)
+    .height(StyleConstants.INPUT_HEIGHT)
     .onClick(()=>this.handleRegister())
   }
 
@@ -150,20 +151,20 @@ struct Register {
     Row() {
       Toggle({ type: ToggleType.Checkbox, isOn: this.agreement })
         .size({ width: 20, height: 20 })
-        .selectedColor($r('app.color.baseGreen'))
+        .selectedColor(StyleConstants.BASE_STYLE.fontColor)
         .onChange((isOn: boolean) => {
           this.agreement = isOn
         })
       Text('已阅读并同意')
-        .fontSize('14fp')
+        .fontSize($r('app.float.font_size_14fp'))
       Text('《服务条款》')
-        .fontSize('14fp')
-        .fontColor($r('app.color.baseGreen'))
+        .fontSize($r('app.float.font_size_14fp'))
+        .fontColor(StyleConstants.BASE_STYLE.fontColor)
       Text('与')
-        .fontSize('14fp')
+        .fontSize($r('app.float.font_size_14fp'))
       Text('《隐私权政策》')
-        .fontSize('14fp')
-        .fontColor($r('app.color.baseGreen'))
+        .fontSize($r('app.float.font_size_14fp'))
+        .fontColor(StyleConstants.BASE_STYLE.fontColor)
     }
     .margin({ top: $r('app.float.base_margin') })
 
@@ -175,19 +176,19 @@ struct Register {
 
 // 输入框样式
 @Extend(TextInput) function inputStyle() {
-  .fontColor($r('app.color.baseGreen'))
-  .caretColor($r('app.color.baseGreen'))
-  .placeholderColor($r('app.color.baseGreen'))
-  .width(PageConstants.FULL_INPUT)
-  .height($r('app.float.login_register_input_height'))
-  .fontSize($r('app.float.big_text_size'))
-  .backgroundColor($r('app.color.background'))
+  .fontColor(StyleConstants.BASE_STYLE.fontColor)
+  .caretColor(StyleConstants.BASE_STYLE.fontColor)
+  .placeholderColor(StyleConstants.BASE_STYLE.fontColor)
+  .width(StyleConstants.FULL_INPUT)
+  .height(StyleConstants.INPUT_HEIGHT)
+  .fontSize($r('app.float.font_size_18fp'))
+  .backgroundColor(StyleConstants.BASE_STYLE.inputBackGroundColor)
   .margin({ top: $r('app.float.base_margin') })
 }
 
 // 文本样式
 @Extend(Text) function TextStyle() {
-  .fontColor($r('app.color.baseGreen'))
+  .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .fontWeight(FontWeight.Bold)
   .margin({ top: '20vp' })
 }

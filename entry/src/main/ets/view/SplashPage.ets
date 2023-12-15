@@ -1,5 +1,6 @@
 import router from '@ohos.router';
-import { PageConstants } from '../constants/PageConstants'
+import { Constants } from '../common/Constants'
+import { StyleConstants } from '../common/StyleConstants'
 import promptAction from '@ohos.promptAction';
 
 
@@ -9,36 +10,32 @@ struct SplashPage {
   // 初始化定时器
   private timer: number = 0
 
-  // 跳转错误提示
-  private errorTitle:string=''
-
-
   build() {
     Column() {
       Column() {
         Image($r('app.media.favicon'))
 
-          .width($r('app.float.LOGO_INFO_size'))
-          .height($r('app.float.LOGO_INFO_size'))
-          .borderRadius($r('app.float.logo_info_radius'))
-          .backgroundColor($r('app.color.baseColor'))
+          .width($r('app.float.size_100vp'))
+          .height($r('app.float.size_100vp'))
+          .borderRadius($r('app.float.radius_12vp'))
+          .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
 
         Text($r('app.string.logo_title'))
-          .fontSize('40rpx')
+          .fontSize($r('app.float.font_size_40fp'))
           .fontWeight(700)
-          .fontColor('#f2f2f2')
+          .fontColor(StyleConstants.BASE_STYLE.fontColor)
           .margin({top:20})
       }
       Column() {
         LoadingProgress()
-          .width('40rpx')
-          .height('40rpx')
+          .width($r('app.float.size_40vp'))
+          .height($r('app.float.size_40vp'))
           .color(Color.White)
 
         Text($r('app.string.logo_info'))
           .fontSize('20rpx')
           .fontWeight(600)
-          .fontColor('#f2f2f2')
+          .fontColor(StyleConstants.BASE_STYLE.fontColor)
 
       }
       .offset({x:0,y:200})
@@ -48,21 +45,20 @@ struct SplashPage {
     .alignItems((HorizontalAlign.Center))
     .width('100%')
     .height('100%')
-    .backgroundImage(PageConstants.LOGIN_BG, ImageRepeat.NoRepeat)
+    .backgroundImage(Constants.LOADING_BG, ImageRepeat.NoRepeat)
     .backgroundImageSize(ImageSize.Cover)
   }
   // 周期函数aboutToAppear里添加一个2秒的定时任务跳转到主页
   aboutToAppear() {
     this.timer = setTimeout(()=>{
-      router.replaceUrl({url:PageConstants.MAIN_PAGE_URL})
+      router.replaceUrl({url:Constants.loadingToJump})
         .catch(err=>{
-          this.errorTitle = err==200002? '页面地址不存在':'进入首页异常，请退出后重新进入'
           promptAction.showToast({
-            message:this.errorTitle ,
+            message:err==200002? $r('app.string.not_found_url'):$r('app.string.loading_to_jump_error'),
             duration: 2000,
           });
         })
-    },PageConstants.DELAY_TIME)
+    },Constants.DELAY_TIME)
   }
 
   // 销毁定时器

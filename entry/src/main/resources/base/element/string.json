@@ -20,10 +20,7 @@
       "name": "logo_title",
       "value": "notion"
     },
-    {
-      "name": "MAIN_PAGE_URL",
-      "value": "pages/MainPage"
-    },
+
     {
       "name": "login_title",
       "value": "欢迎注册"
@@ -51,6 +48,14 @@
     {
       "name": "agreement",
       "value": "请阅读并勾选隐私协议！"
+    },
+    {
+      "name": "not_found_url",
+      "value": "页面地址不存在"
+    },
+    {
+      "name": "loading_to_jump_error",
+      "value": "进入首页异常，请退出后重新进入"
     }
   ]
 }

@@ -2,8 +2,8 @@
   "src": [
     "view/SplashPage",
     "view/MainPage",
-    "pages/Register",
-    "pages/Home",
-    "pages/Setting"
+    "pages/auth/Register",
+    "pages/home/Index",
+    "pages/mine/Index"
   ]
 }
