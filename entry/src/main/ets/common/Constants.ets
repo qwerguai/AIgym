@@ -7,7 +7,7 @@ export class Constants{
   static readonly LOADING_BG:ResourceStr = $r("app.media.loading")
 
   /**
-   * the tabbar pages icon url
+   * the mainPage tabBar pages icon url
    */
   static readonly TABBARLIST = [
     {
@@ -32,6 +32,7 @@ export class Constants{
     },
   ]
 
+
   /**
    * jump to url after loading
    * start not have '/'
@@ -43,5 +44,10 @@ export class Constants{
    */
   static  readonly  DELAY_TIME_5s:number = 5000
   static  readonly  DELAY_TIME_1m:number = 1000 * 60
+
+  /**
+   * search text
+   */
+  static readonly SEARCH_TEXT:string = '搜索notion'
 
 }

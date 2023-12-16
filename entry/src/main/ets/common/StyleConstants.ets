@@ -3,6 +3,7 @@ interface IBaseStyle {
   backGroundColor:string;
   fontColor:string;
   inputBackGroundColor:string
+  defaultBackGround:string
 }
 
 export class StyleConstants{
@@ -12,10 +13,16 @@ export class StyleConstants{
    * TODO:将全局共用的背景颜色，字体颜色提到这里来，便于后期做主题切换
    */
   static BASE_STYLE:IBaseStyle = {
+    defaultBackGround:'#f2f3f5',
     backGroundColor:'#ffffff',
     fontColor:'#008080',
     inputBackGroundColor:'#f1f3f5'
   }
+
+  /**
+   * the common spacing size
+   */
+  static readonly SPACING = '20vp'
 
   /**
    * the width of button
@@ -49,5 +56,7 @@ static readonly TABBAR_SIZE:string = '24vp'
     SELECT:'#008080',
     DEFAULT:'#000000'
   }
+
+
 
 }
