@@ -41,6 +41,7 @@ export class Constants{
   /**
    * 定时器时间
    */
-  static  readonly  DELAY_TIME:number = 5000
+  static  readonly  DELAY_TIME_5s:number = 5000
+  static  readonly  DELAY_TIME_1m:number = 1000 * 60
 
 }

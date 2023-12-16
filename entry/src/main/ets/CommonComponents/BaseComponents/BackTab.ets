@@ -18,27 +18,29 @@ export default struct BackTab {
       Flex({alignItems:ItemAlign.Center}){
 
         Image($r('app.media.back'))
-          .width('30rpx')
-          .height('30rpx')
-          .margin({right:20,left:10})
+          .width($r('app.float.size_30vp'))
+          .height($r('app.float.size_30vp'))
+          .margin({right:$r('app.float.size_20vp'),left:$r('app.float.size_20vp')})
 
-        Text(this.title)
-          .fontSize('20rpx')
-          .fontWeight(FontWeight.Bold)
+        if (this.title !== ''){
+          Text(this.title)
+            .fontSize($r('app.float.font_size_18fp'))
+            .fontWeight(FontWeight.Bold)
+        }
 
       }
       .height('100%')
 
       if (this.rightIcon!==''){
         Image(this.rightIcon)
-          .width('30rpx')
-          .height('30rpx')
+          .width($r('app.float.size_30vp'))
+          .height($r('app.float.size_30vp'))
           .margin({right:20,left:10})
       }
 
     }
     .width('100%')
-    .height('60rpx')
+    .height($r('app.float.size_30vp'))
     .onClick(this.handleBack)
   }
 }

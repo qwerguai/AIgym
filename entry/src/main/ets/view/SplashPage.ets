@@ -12,13 +12,14 @@ struct SplashPage {
 
   build() {
     Column() {
-      Column() {
-        Image($r('app.media.favicon'))
 
+      Column() {
+
+        Image($r('app.media.favicon'))
           .width($r('app.float.size_100vp'))
           .height($r('app.float.size_100vp'))
           .borderRadius($r('app.float.radius_12vp'))
-          .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
+          .backgroundColor(StyleConstants.BASE_GREY)
 
         Text($r('app.string.logo_title'))
           .fontSize($r('app.float.font_size_40fp'))
@@ -26,6 +27,7 @@ struct SplashPage {
           .fontColor(StyleConstants.BASE_STYLE.fontColor)
           .margin({top:20})
       }
+
       Column() {
         LoadingProgress()
           .width($r('app.float.size_40vp'))
@@ -45,8 +47,6 @@ struct SplashPage {
     .alignItems((HorizontalAlign.Center))
     .width('100%')
     .height('100%')
-    .backgroundImage(Constants.LOADING_BG, ImageRepeat.NoRepeat)
-    .backgroundImageSize(ImageSize.Cover)
   }
   // 周期函数aboutToAppear里添加一个2秒的定时任务跳转到主页
   aboutToAppear() {
@@ -58,7 +58,7 @@ struct SplashPage {
             duration: 2000,
           });
         })
-    },Constants.DELAY_TIME)
+    },Constants.DELAY_TIME_5s)
   }
 
   // 销毁定时器

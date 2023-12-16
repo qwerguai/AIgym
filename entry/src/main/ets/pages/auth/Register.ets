@@ -2,6 +2,8 @@ import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
 import { Constants } from '../../common/Constants'
 import { StyleConstants } from '../../common/StyleConstants'
+import BackTab from '../../CommonComponents/BaseComponents/BackTab'
+import {nonNullValidation} from '../../common/utils'
 
 
 
@@ -15,11 +17,26 @@ struct Register {
   // 用户密码
   @State password: string = ''
 
+  // 用户邮箱
+  @State email:string = ''
+
+  // 验证码
+  @State code:string = ''
+
+  // 获取验证码
+  @State getCode:ResourceStr = $r('app.string.get_v_code')
+
+  // 验证码状态
+  @State codeStata:boolean = false
+
   // 隐私协议
   @State agreement: boolean = false
 
   // 是否显示LoadingProgress
   @State isShowLoadingProgress:boolean = false
+
+  // 验证码过期时间
+  @State reckonTimer:number = 0
 
   // 定时器
   @State timer:number = 0
@@ -27,9 +44,9 @@ struct Register {
 
   // 注册
   handleRegister():void{
-    if (this.username === '' || this.password === '') {
+    if (!nonNullValidation([this.password,this.username,this.email,this.code])) {
       promptAction.showToast({
-        message: $r('app.string.input_empty_tips'),
+        message: $r('app.string.empty_tips'),
         duration: 2000,
       });
     } else {
@@ -41,24 +58,44 @@ struct Register {
         return
       }
       this.isShowLoadingProgress = true;
-        this.timer = setTimeout(() => {
+       setTimeout(() => {
           this.isShowLoadingProgress = false;
           router.replaceUrl({ url: 'view/MainPage' });
-        }, Constants.DELAY_TIME);
+        }, Constants.DELAY_TIME_5s);
     }
+
 }
+
+  // 获取验证码
+  getVerificationCode():void{
+    // 重新给倒计时赋值
+    this.reckonTimer = 60
+    this.getCode = $r('app.string.send_code');
+    this.code = '123456'
+    this.codeStata = true
+    // 验证码过期
+    this.timer = setInterval(()=>{
+      this.reckonTimer--
+      if (this.reckonTimer <= 0) {
+        this.codeStata = false
+        this.getCode = $r('app.string.refresh_code');
+        clearInterval(this.timer)
+      }
+    },1000)
+
+  }
 
   build() {
     Column() {
-
+      BackTab()
       Column() {
 
         // 标题
         Column() {
-          Text($r('app.string.login_title'))
+          Text($r('app.string.register_title'))
             .TextStyle()
             .fontSize($r('app.float.font_size_30fp'))
-          Text($r('app.string.login_title_info'))
+          Text($r('app.string.register_title_info'))
             .fontSize($r('app.float.font_size_16fp'))
             .TextStyle()
         }
@@ -69,6 +106,7 @@ struct Register {
         // 表单
         Column() {
           this.Form()
+
         }
         .justifyContent(FlexAlign.Center)
         .height('60%')
@@ -97,23 +135,75 @@ struct Register {
 
 
   /**
-   * 登录表单
+   * 注册表单
    */
   @Builder
   Form() {
 
-    TextInput({ placeholder: $r('app.string.register_user') })
+    TextInput({ placeholder: $r('app.string.user') })
       .inputStyle()
       .onChange((value: string) => {
         this.username = value;
       })
 
-    TextInput({ placeholder: $r('app.string.register_password')})
+    TextInput({ placeholder: $r('app.string.password')})
       .type(InputType.Password)
       .inputStyle()
       .onChange((value: string) => {
         this.password = value;
       })
+
+    TextInput({ placeholder: $r('app.string.email')})
+      .type(InputType.Email)
+      .inputStyle()
+      .onChange((value: string) => {
+        this.email = value;
+      })
+
+    TextInput({ placeholder: $r('app.string.v_code')})
+      .inputStyle()
+      .onChange((value: string) => {
+        this.code = value;
+      })
+
+
+    Flex({alignItems:ItemAlign.Center,justifyContent:FlexAlign.Center}){
+      Button({ type: ButtonType.Capsule, stateEffect: true }) {
+        Row() {
+          if (this.codeStata){
+            LoadingProgress()
+              .width($r('app.float.size_30vp'))
+              .height($r('app.float.size_30vp'))
+              .color($r('app.color.baseGreen'))
+          }
+          Text(this.getCode)
+            .fontColor(StyleConstants.BASE_STYLE.fontColor)
+            .fontWeight(FontWeight.Bold)
+            .fontSize($r('app.float.font_size_14fp'))
+
+          if (this.codeStata){
+            Text(`(${this.reckonTimer})`)
+              .fontColor(Color.Blue)
+              .fontWeight(FontWeight.Bold)
+              .fontSize($r('app.float.font_size_12fp'))
+          }
+        }
+        .alignItems(VerticalAlign.Center)
+
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Transparent)
+      .onClick(()=> {
+        if (!this.codeStata) {
+          this.getVerificationCode();
+        }
+      })
+    }
+    .margin({top:$r('app.float.base_margin') })
+    .height($r('app.float.size_40vp'))
+
+
 
   }
 
@@ -190,5 +280,5 @@ struct Register {
 @Extend(Text) function TextStyle() {
   .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .fontWeight(FontWeight.Bold)
-  .margin({ top: '20vp' })
+  .margin({ top: $r('app.float.base_margin')  })
 }

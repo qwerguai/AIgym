@@ -9,10 +9,7 @@
       "name": "radius_12vp",
       "value": "12vp"
     },
-    {
-      "name": "baseGreen",
-      "value": "#008080"
-    },
+
     {
       "name": "font_size_30fp",
       "value": "30fp"
@@ -33,18 +30,33 @@
     {
       "name": "font_size_14fp",
       "value": "14fp"
+    },{
+      "name": "font_size_12fp",
+      "value": "12fp"
     },
     {
       "name": "size_40vp",
       "value": "40vp"
     },
     {
+      "name": "size_30vp",
+      "value": "30vp"
+    },
+    {
       "name": "size_50vp",
       "value": "50vp"
     },
     {
+      "name": "size_20vp",
+      "value": "20vp"
+    },
+    {
       "name": "size_12vp",
       "value": "12vp"
+    },
+    {
+      "name": "size_14vp",
+      "value": "14vp"
     },
     {
       "name": "base_margin",
