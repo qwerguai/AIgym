@@ -7,6 +7,10 @@
       "value": "12vp"
     },
     {
+      "name": "radius_full",
+      "value": "100%"
+    },
+    {
       "name": "radius_10vp",
       "value": "10vp"
     },
@@ -16,79 +20,45 @@
     },
 
 
-
     {
-      "name": "font_size_30fp",
-      "value": "30fp"
+      "name": "font_size_12fp",
+      "value": "12fp"
+    },
+    {
+      "name": "font_size_14fp",
+      "value": "14fp"
     },
     {
       "name": "font_size_16fp",
       "value": "16fp"
     },
-
     {
       "name": "font_size_18fp",
       "value": "18fp"
     },
     {
+      "name": "font_size_20fp",
+      "value": "20fp"
+    },
+    {
+      "name": "font_size_24fp",
+      "value": "24fp"
+    },
+    {
+      "name": "font_size_26fp",
+      "value": "26fp"
+    },
+    {
+      "name": "font_size_30fp",
+      "value": "30fp"
+    },
+    {
       "name": "font_size_40fp",
       "value": "40fp"
     },
-    {
-      "name": "font_size_14fp",
-      "value": "14fp"
-    },{
-      "name": "font_size_12fp",
-      "value": "12fp"
-    },
 
 
 
-    {
-      "name": "size_140vp",
-      "value": "140fp"
-    },
-    {
-      "name": "size_100vp",
-      "value": "100fp"
-    },
-    {
-      "name": "size_80vp",
-      "value": "80fp"
-    },
-    {
-      "name": "size_60vp",
-      "value": "60vp"
-    },
-    {
-      "name": "size_0vp",
-      "value": "50vp"
-    },
-    {
-      "name": "size_40vp",
-      "value": "40vp"
-    },
-    {
-      "name": "size_30vp",
-      "value": "30vp"
-    },
-    {
-      "name": "size_34vp",
-      "value": "34vp"
-    },
-
-    {
-      "name": "size_20vp",
-      "value": "20vp"
-    },
-    {
-      "name": "size_12vp",
-      "value": "12vp"
-    },
-    {
-      "name": "size_10vp",
-      "value": "10vp"
-    },
     {
       "name": "size_6vp",
       "value": "6vp"
@@ -98,14 +68,58 @@
       "value": "8vp"
     },
     {
+      "name": "size_10vp",
+      "value": "10vp"
+    },
+    {
+      "name": "size_12vp",
+      "value": "12vp"
+    },
+    {
       "name": "size_14vp",
       "value": "14vp"
     },
-    {
-      "name": "base_margin",
-      "value": "20vp"
-    }
 
+    {
+      "name": "size_20vp",
+      "value": "20vp"
+    },
+    {
+      "name": "size_30vp",
+      "value": "30vp"
+    },
+    {
+      "name": "size_34vp",
+      "value": "34vp"
+    },
+    {
+      "name": "size_40vp",
+      "value": "40vp"
+    },
+    {
+      "name": "size_50vp",
+      "value": "50vp"
+    },
+    {
+      "name": "size_60vp",
+      "value": "60vp"
+    },
+    {
+      "name": "size_70vp",
+      "value": "70vp"
+    },
+    {
+      "name": "size_80vp",
+      "value": "80vp"
+    },
+    {
+      "name": "size_100vp",
+      "value": "100vp"
+    },
+    {
+      "name": "size_140vp",
+      "value": "140vp"
+    }
 
   ]
 }

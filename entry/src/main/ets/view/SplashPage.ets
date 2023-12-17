@@ -25,7 +25,7 @@ struct SplashPage {
           .fontSize($r('app.float.font_size_40fp'))
           .fontWeight(700)
           .fontColor(StyleConstants.BASE_STYLE.fontColor)
-          .margin({top:20})
+          .margin({top:StyleConstants.SPACING})
       }
 
       Column() {
@@ -35,7 +35,7 @@ struct SplashPage {
           .color(Color.White)
 
         Text($r('app.string.logo_info'))
-          .fontSize('20rpx')
+          .fontSize($r('app.float.font_size_20fp'))
           .fontWeight(600)
           .fontColor(StyleConstants.BASE_STYLE.fontColor)
 

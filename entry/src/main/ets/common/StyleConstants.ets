@@ -30,9 +30,14 @@ export class StyleConstants{
   static  readonly FULL_BUTTON:string = '70%'
 
   /**
-   * the width of input
+   * the width of 100%
    */
-  static  readonly  FULL_INPUT:string = '100%'
+  static  readonly  FULL_WIDTH:string = '100%'
+
+  /**
+   * the height of 100%
+   */
+  static  readonly  FULL_HEIGHT:string = '100%'
 
   /**
    * the height of input
