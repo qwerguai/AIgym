@@ -11,6 +11,86 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "logo_info",
+      "value": "Believe that technology delivers value"
+    },
+    {
+      "name": "logo_title",
+      "value": "notion"
+    },
+    {
+      "name": "register_title",
+      "value": "Welcome to register"
+    },
+    {
+      "name": "register_title_info",
+      "value": "Register your login account to see more exciting content"
+    },
+    {
+      "name": "login_title",
+      "value": "Welcome to login"
+    },
+    {
+      "name": "login_title_info",
+      "value": "Climbers are immortal！"
+    },
+    {
+      "name": "user",
+      "value": "Please enter the account number"
+    },
+    {
+      "name": "password",
+      "value": "Please enter the password"
+    },
+    {
+      "name": "email",
+      "value": "Please enter a mailbox"
+    },
+    {
+      "name": "v_code",
+      "value": "Please enter the verification code"
+    },
+    {
+      "name": "get_v_code",
+      "value": "Get verification code"
+    },
+    {
+      "name": "send_code",
+      "value": "Verification code has been sent"
+    },
+    {
+      "name": "refresh_code",
+      "value": "Reacquire"
+    },
+    {
+      "name":"register",
+      "value": "register"
+    },
+    {
+      "name": "login",
+      "value": "login"
+    },
+    {
+      "name": "input_empty_tips",
+      "value": "Please enter the correct account or password！"
+    },
+    {
+      "name": "empty_tips",
+      "value": "Please improve the user information"
+    },
+    {
+      "name": "agreement",
+      "value": "Please read and check the privacy agreement！"
+    },
+    {
+      "name": "not_found_url",
+      "value": "The page address does not exist"
+    },
+    {
+      "name": "loading_to_jump_error",
+      "value": "Exception in entering the home page. Please exit and re-enter"
     }
   ]
 }
