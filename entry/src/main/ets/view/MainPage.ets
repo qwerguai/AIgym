@@ -24,7 +24,7 @@ struct TabPage {
     }
     .justifyContent(FlexAlign.Center)
     .height($r('app.float.size_50vp'))
-    .width('100%')
+    .width(StyleConstants.FULL_WIDTH)
     .onClick(() => {
       this.currentIndex = index
       this.tabsController.changeIndex(this.currentIndex)
@@ -56,7 +56,7 @@ struct TabPage {
       },(item,idx)=>idx.toString())
 
     }
-    .width('100%')
+    .width(StyleConstants.FULL_WIDTH)
     .backgroundColor(Color.White)
     .barHeight(56)
     .barMode(BarMode.Fixed)

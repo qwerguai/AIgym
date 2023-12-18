@@ -1,7 +1,7 @@
 import {StyleConstants} from '../../common/StyleConstants'
 import {homeShowList} from  '../../common/mock'
 
-@Component
+ @Component
 export default struct FunctionalSections {
   // 后期后端所需板块标识
   @Prop plate:number
@@ -29,26 +29,36 @@ export default struct FunctionalSections {
                       Image($r('app.media.programmer'))
                         .width($r('app.float.size_20vp'))
                         .height($r('app.float.size_20vp'))
+                        .borderRadius($r('app.float.radius_full'))
                       Text(item.info)
                         .fontSize($r('app.float.font_size_12fp'))
                         .margin({left:$r('app.float.size_20vp')})
                     }
                   .margin({top:$r('app.float.size_10vp'),bottom:$r('app.float.size_10vp')})
+
+                    Text(`${item.title},${item.info}xzvz对方对方的地方第三方范德萨发撒发方法啊发生的`){
+                    }
+                    .width(StyleConstants.FULL_WIDTH)
+                    .textAlign(TextAlign.Start)
+                    .fontSize($r('app.float.font_size_14fp'))
+                    .maxLines(2)
+                    .textOverflow({ overflow:TextOverflow.Ellipsis })
+
                 }
                 .width('70%')
-                .height('100%')
+                .height(StyleConstants.FULL_HEIGHT)
 
                 Column(){
                   Image($r('app.media.programmer'))
-                    .width('100%')
-                    .height('100%')
+                    .width(StyleConstants.FULL_WIDTH)
+                    .height(StyleConstants.FULL_HEIGHT)
                 }
                 .width('30%')
-                .height('100%')
+                .height(StyleConstants.FULL_HEIGHT)
 
               }
-              .width('100%')
-              .height('60%')
+              .width(StyleConstants.FULL_WIDTH)
+              .height('54%')
 
 
               // 其他
@@ -63,7 +73,7 @@ export default struct FunctionalSections {
                   .margin({top:$r('app.float.size_10vp'),bottom:$r('app.float.size_10vp')})
                 }
                 .width('50%')
-                .height('100%')
+                .height(StyleConstants.FULL_HEIGHT)
 
                 Flex({justifyContent:FlexAlign.SpaceBetween,alignItems:ItemAlign.Center}){
                   Text(item.like)
@@ -72,24 +82,24 @@ export default struct FunctionalSections {
                     .fontSize($r('app.float.font_size_12fp'))
                 }
                 .width('50%')
-                .height('100%')
+                .height(StyleConstants.FULL_HEIGHT)
 
               }
-              .height('20%')
+              .height('26%')
 
             }
-            .width('100%')
-            .height('100%')
+            .width(StyleConstants.FULL_WIDTH)
+            .height(StyleConstants.FULL_HEIGHT)
           }
           .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
-          .width('100%')
+          .width(StyleConstants.FULL_WIDTH)
           .height($r('app.float.size_140vp'))
           .padding({left:StyleConstants.SPACING,right:StyleConstants.SPACING,top:$r('app.float.size_10vp')})
 
         }, (item,idx) => idx.toString())
       }
-      .width('100%')
-      .height('100%')
+      .width(StyleConstants.FULL_WIDTH)
+      .height(StyleConstants.FULL_HEIGHT)
       .margin({top:$r('app.float.size_8vp')})
       .listDirection(Axis.Vertical) // 排列方向
       .edgeEffect(EdgeEffect.Spring) // 滑动到边缘弹性物理动效
@@ -104,7 +114,7 @@ export default struct FunctionalSections {
       })
 
     }
-    .width('100%')
-    .height('100%')
+    .width(StyleConstants.FULL_WIDTH)
+    .height(StyleConstants.FULL_HEIGHT)
   }
 }

@@ -92,9 +92,9 @@ export default struct Home {
       }
       .vertical(false)
       .barMode(BarMode.Scrollable)
-      .width('100%')
-      .height('100%')
-      .barWidth('100%')
+      .width(StyleConstants.FULL_WIDTH)
+      .height(StyleConstants.FULL_HEIGHT)
+      .barWidth(StyleConstants.FULL_WIDTH)
       .barHeight($r('app.float.size_40vp'))
       .animationDuration(400)
       .onChange((index: number) => {
@@ -123,7 +123,7 @@ export default struct Home {
     }
     .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
     .width($r('app.float.size_80vp'))
-    .height('100%')
+    .height(StyleConstants.FULL_HEIGHT)
   }
 }
 

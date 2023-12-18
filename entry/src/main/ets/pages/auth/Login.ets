@@ -2,9 +2,8 @@ import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
 import { Constants } from '../../common/Constants'
 import { StyleConstants } from '../../common/StyleConstants'
-import BackTab from '../../CommonComponents/BaseComponents/BackTab'
-import {nonNullValidation} from '../../common/utils'
-
+import HeaderNavigation from '../../CommonComponents/BaseComponents/HeaderNavigation'
+import { nonNullValidation } from '../../common/utils'
 
 
 @Entry
@@ -19,18 +18,18 @@ struct Login {
 
 
   // 是否显示LoadingProgress
-  @State isShowLoadingProgress:boolean = false
+  @State isShowLoadingProgress: boolean = false
 
   // 验证码过期时间
-  @State reckonTimer:number = 0
+  @State reckonTimer: number = 0
 
   // 定时器
-  @State timer:number = 0
+  @State timer: number = 0
 
 
   // 注册
-  handleRegister():void{
-    if (!nonNullValidation([this.username,this.password])) {
+  handleRegister(): void {
+    if (!nonNullValidation([this.username, this.password])) {
       promptAction.showToast({
         message: $r('app.string.input_empty_tips'),
         duration: 2000,
@@ -38,18 +37,28 @@ struct Login {
     } else {
 
       this.isShowLoadingProgress = true;
-       setTimeout(() => {
-          this.isShowLoadingProgress = false;
-          router.replaceUrl({ url: 'view/MainPage' });
-        }, Constants.DELAY_TIME_5s);
+      setTimeout(() => {
+        this.isShowLoadingProgress = false;
+        router.replaceUrl({ url: 'view/MainPage' });
+      }, Constants.DELAY_TIME_5s);
     }
 
-}
-
+  }
 
   build() {
     Column() {
-      BackTab()
+      HeaderNavigation({
+        leftIconGroup: {
+          icon: $r('app.media.back'),
+          event: () => {
+            router.back()
+          }
+        },
+        middle: {
+          title: $r('app.string.login')
+        }
+      })
+
       Column() {
 
         // 标题
@@ -103,7 +112,7 @@ struct Login {
         this.username = value;
       })
 
-    TextInput({ placeholder: $r('app.string.password')})
+    TextInput({ placeholder: $r('app.string.password') })
       .type(InputType.Password)
       .inputStyle()
       .onChange((value: string) => {
@@ -115,14 +124,14 @@ struct Login {
    * 登录按钮
    */
   @Builder
-  RegisterButton(){
-    Button( { type: ButtonType.Capsule }){
+  RegisterButton() {
+    Button({ type: ButtonType.Capsule }) {
       Row() {
-        if (!this.isShowLoadingProgress){
+        if (!this.isShowLoadingProgress) {
           Text($r('app.string.login'))
             .fontSize('16fp')
             .fontColor(StyleConstants.BASE_GREY)
-        }else{
+        } else {
           LoadingProgress()
             .width(30)
             .height(30)
@@ -134,9 +143,8 @@ struct Login {
     .width(StyleConstants.FULL_BUTTON)
     .backgroundColor(StyleConstants.BASE_STYLE.fontColor)
     .height(StyleConstants.INPUT_HEIGHT)
-    .onClick(()=>this.handleRegister())
+    .onClick(() => this.handleRegister())
   }
-
 }
 
 
@@ -145,16 +153,16 @@ struct Login {
   .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .caretColor(StyleConstants.BASE_STYLE.fontColor)
   .placeholderColor(StyleConstants.BASE_STYLE.fontColor)
-  .width(StyleConstants.FULL_INPUT)
+  .width(StyleConstants.FULL_WIDTH)
   .height(StyleConstants.INPUT_HEIGHT)
   .fontSize($r('app.float.font_size_18fp'))
   .backgroundColor(StyleConstants.BASE_STYLE.inputBackGroundColor)
-  .margin({ top: $r('app.float.base_margin') })
+  .margin({ top: StyleConstants.SPACING })
 }
 
 // 文本样式
 @Extend(Text) function TextStyle() {
   .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .fontWeight(FontWeight.Bold)
-  .margin({ top: $r('app.float.base_margin')  })
+  .margin({ top: StyleConstants.SPACING })
 }

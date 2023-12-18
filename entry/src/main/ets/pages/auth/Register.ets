@@ -2,7 +2,7 @@ import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
 import { Constants } from '../../common/Constants'
 import { StyleConstants } from '../../common/StyleConstants'
-import BackTab from '../../CommonComponents/BaseComponents/BackTab'
+import HeaderNavigation from '../../CommonComponents/BaseComponents/HeaderNavigation'
 import {nonNullValidation} from '../../common/utils'
 
 
@@ -87,7 +87,18 @@ struct Register {
 
   build() {
     Column() {
-      BackTab()
+      HeaderNavigation({
+        leftIconGroup: {
+          icon: $r('app.media.back'),
+          event: () => {
+            router.back()
+          }
+        },
+        middle: {
+          title:$r('app.string.register')
+        }
+      })
+
       Column() {
 
         // 标题
@@ -200,7 +211,7 @@ struct Register {
         }
       })
     }
-    .margin({top:$r('app.float.base_margin') })
+    .margin({top:StyleConstants.SPACING })
     .height($r('app.float.size_40vp'))
 
 
@@ -256,7 +267,7 @@ struct Register {
         .fontSize($r('app.float.font_size_14fp'))
         .fontColor(StyleConstants.BASE_STYLE.fontColor)
     }
-    .margin({ top: $r('app.float.base_margin') })
+    .margin({ top: StyleConstants.SPACING })
 
   }
 
@@ -269,16 +280,16 @@ struct Register {
   .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .caretColor(StyleConstants.BASE_STYLE.fontColor)
   .placeholderColor(StyleConstants.BASE_STYLE.fontColor)
-  .width(StyleConstants.FULL_INPUT)
+  .width(StyleConstants.FULL_WIDTH)
   .height(StyleConstants.INPUT_HEIGHT)
   .fontSize($r('app.float.font_size_18fp'))
   .backgroundColor(StyleConstants.BASE_STYLE.inputBackGroundColor)
-  .margin({ top: $r('app.float.base_margin') })
+  .margin({ top:StyleConstants.SPACING})
 }
 
 // 文本样式
 @Extend(Text) function TextStyle() {
   .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .fontWeight(FontWeight.Bold)
-  .margin({ top: $r('app.float.base_margin')  })
+  .margin({ top: StyleConstants.SPACING})
 }
