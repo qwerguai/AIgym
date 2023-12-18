@@ -1,12 +1,15 @@
 import promptAction from '@ohos.promptAction';
 import router from '@ohos.router';
-import { PageConstants } from '../constants/PageConstants'
+import { Constants } from '../../common/Constants'
+import { StyleConstants } from '../../common/StyleConstants'
+import BackTab from '../../CommonComponents/BaseComponents/BackTab'
+import {nonNullValidation} from '../../common/utils'
 
 
 
 @Entry
 @Component
-struct Register {
+struct Login {
 
   // 用户账号
   @State username: string = ''
@@ -14,11 +17,12 @@ struct Register {
   // 用户密码
   @State password: string = ''
 
-  // 隐私协议
-  @State agreement: boolean = false
 
   // 是否显示LoadingProgress
   @State isShowLoadingProgress:boolean = false
+
+  // 验证码过期时间
+  @State reckonTimer:number = 0
 
   // 定时器
   @State timer:number = 0
@@ -26,39 +30,35 @@ struct Register {
 
   // 注册
   handleRegister():void{
-    if (this.username === '' || this.password === '') {
+    if (!nonNullValidation([this.username,this.password])) {
       promptAction.showToast({
         message: $r('app.string.input_empty_tips'),
         duration: 2000,
       });
     } else {
-      if (!this.agreement) {
-        promptAction.showToast({
-          message: $r('app.string.agreement'),
-          duration: 2000,
-        });
-        return
-      }
+
       this.isShowLoadingProgress = true;
-        this.timer = setTimeout(() => {
+       setTimeout(() => {
           this.isShowLoadingProgress = false;
           router.replaceUrl({ url: 'view/MainPage' });
-        }, PageConstants.DELAY_TIME);
+        }, Constants.DELAY_TIME_5s);
     }
+
 }
+
 
   build() {
     Column() {
-
+      BackTab()
       Column() {
 
         // 标题
         Column() {
           Text($r('app.string.login_title'))
             .TextStyle()
-            .fontSize($r('app.float.register_title'))
+            .fontSize($r('app.float.font_size_30fp'))
           Text($r('app.string.login_title_info'))
-            .fontSize($r('app.float.register_title_info'))
+            .fontSize($r('app.float.font_size_16fp'))
             .TextStyle()
         }
         .justifyContent(FlexAlign.Center)
@@ -77,9 +77,6 @@ struct Register {
           this.RegisterButton()
         }
 
-        // 隐私协议
-        this.Agreement()
-
       }
       .alignItems(HorizontalAlign.Start)
       .width('80%')
@@ -94,100 +91,70 @@ struct Register {
     // .backgroundImageSize(ImageSize.Cover)
   }
 
-
   /**
    * 登录表单
    */
   @Builder
   Form() {
 
-    TextInput({ placeholder: $r('app.string.register_user') })
+    TextInput({ placeholder: $r('app.string.user') })
       .inputStyle()
       .onChange((value: string) => {
         this.username = value;
       })
 
-    TextInput({ placeholder: $r('app.string.register_password')})
+    TextInput({ placeholder: $r('app.string.password')})
       .type(InputType.Password)
       .inputStyle()
       .onChange((value: string) => {
         this.password = value;
       })
-
   }
 
   /**
-   * 注册按钮
+   * 登录按钮
    */
   @Builder
   RegisterButton(){
     Button( { type: ButtonType.Capsule }){
       Row() {
         if (!this.isShowLoadingProgress){
-          Text($r('app.string.register'))
+          Text($r('app.string.login'))
             .fontSize('16fp')
-            .fontColor($r('app.color.baseColor'))
+            .fontColor(StyleConstants.BASE_GREY)
         }else{
           LoadingProgress()
             .width(30)
             .height(30)
             .margin({ left: 12 })
-            .color($r('app.color.baseColor'))
+            .color(StyleConstants.BASE_GREY)
         }
       }
     }
-    .width(PageConstants.FULL_BUTTON)
-    .backgroundColor($r('app.color.baseGreen'))
-    .height($r('app.float.login_register_input_height'))
+    .width(StyleConstants.FULL_BUTTON)
+    .backgroundColor(StyleConstants.BASE_STYLE.fontColor)
+    .height(StyleConstants.INPUT_HEIGHT)
     .onClick(()=>this.handleRegister())
   }
-
-  /**
-   * 隐私协议
-   */
-  @Builder
-  Agreement() {
-    Row() {
-      Toggle({ type: ToggleType.Checkbox, isOn: this.agreement })
-        .size({ width: 20, height: 20 })
-        .selectedColor($r('app.color.baseGreen'))
-        .onChange((isOn: boolean) => {
-          this.agreement = isOn
-        })
-      Text('已阅读并同意')
-        .fontSize('14fp')
-      Text('《服务条款》')
-        .fontSize('14fp')
-        .fontColor($r('app.color.baseGreen'))
-      Text('与')
-        .fontSize('14fp')
-      Text('《隐私权政策》')
-        .fontSize('14fp')
-        .fontColor($r('app.color.baseGreen'))
-    }
-    .margin({ top: $r('app.float.base_margin') })
-
-  }
-
 
 }
 
 
 // 输入框样式
 @Extend(TextInput) function inputStyle() {
-  .fontColor($r('app.color.baseGreen'))
-  .caretColor($r('app.color.baseGreen'))
-  .placeholderColor($r('app.color.baseGreen'))
-  .width(PageConstants.FULL_INPUT)
-  .height($r('app.float.login_register_input_height'))
-  .fontSize($r('app.float.big_text_size'))
-  .backgroundColor($r('app.color.background'))
+  .fontColor(StyleConstants.BASE_STYLE.fontColor)
+  .caretColor(StyleConstants.BASE_STYLE.fontColor)
+  .placeholderColor(StyleConstants.BASE_STYLE.fontColor)
+  .width(StyleConstants.FULL_INPUT)
+  .height(StyleConstants.INPUT_HEIGHT)
+  .fontSize($r('app.float.font_size_18fp'))
+  .backgroundColor(StyleConstants.BASE_STYLE.inputBackGroundColor)
   .margin({ top: $r('app.float.base_margin') })
 }
 
 // 文本样式
 @Extend(Text) function TextStyle() {
-  .fontColor($r('app.color.baseGreen'))
+  .fontColor(StyleConstants.BASE_STYLE.fontColor)
   .fontWeight(FontWeight.Bold)
-  .margin({ top: '20vp' })
+  .margin({ top: $r('app.float.base_margin')  })
 }

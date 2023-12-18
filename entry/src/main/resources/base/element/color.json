@@ -5,24 +5,12 @@
       "value": "#FFFFFF"
     },
     {
-      "name": "baseColor",
-      "value": "#f2f2f2"
+      "name": "baseBlack",
+      "value": "#000000"
     },
     {
       "name": "baseGreen",
       "value": "#008080"
-    },
-    {
-      "name": "baseGrey",
-      "value": "#cccccc"
-    },
-    {
-      "name": "basePlaceholder",
-      "value": "#99182431"
-    },
-    {
-      "name": "background",
-      "value": "#F1F3F5"
     }
   ]
 }

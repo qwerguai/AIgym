@@ -1,37 +1,111 @@
 {
   "float": [
-    {
-      "name": "LOGO_INFO_size",
-      "value": "100fp"
-    },
+
 
     {
-      "name": "logo_info_radius",
+      "name": "radius_12vp",
       "value": "12vp"
     },
     {
-      "name": "baseGreen",
-      "value": "#008080"
+      "name": "radius_10vp",
+      "value": "10vp"
     },
     {
-      "name": "register_title",
+      "name": "radius_8vp",
+      "value": "8vp"
+    },
+
+
+
+    {
+      "name": "font_size_30fp",
       "value": "30fp"
     },
     {
-      "name": "register_title_info",
+      "name": "font_size_16fp",
       "value": "16fp"
     },
+
     {
-      "name": "login_register_input_height",
+      "name": "font_size_18fp",
+      "value": "18fp"
+    },
+    {
+      "name": "font_size_40fp",
+      "value": "40fp"
+    },
+    {
+      "name": "font_size_14fp",
+      "value": "14fp"
+    },{
+      "name": "font_size_12fp",
+      "value": "12fp"
+    },
+
+
+
+    {
+      "name": "size_140vp",
+      "value": "140fp"
+    },
+    {
+      "name": "size_100vp",
+      "value": "100fp"
+    },
+    {
+      "name": "size_80vp",
+      "value": "80fp"
+    },
+    {
+      "name": "size_60vp",
+      "value": "60vp"
+    },
+    {
+      "name": "size_0vp",
+      "value": "50vp"
+    },
+    {
+      "name": "size_40vp",
       "value": "40vp"
     },
     {
-      "name": "big_text_size",
-      "value": "18fp"
+      "name": "size_30vp",
+      "value": "30vp"
+    },
+    {
+      "name": "size_34vp",
+      "value": "34vp"
+    },
+
+    {
+      "name": "size_20vp",
+      "value": "20vp"
+    },
+    {
+      "name": "size_12vp",
+      "value": "12vp"
+    },
+    {
+      "name": "size_10vp",
+      "value": "10vp"
+    },
+    {
+      "name": "size_6vp",
+      "value": "6vp"
+    },
+    {
+      "name": "size_8vp",
+      "value": "8vp"
+    },
+    {
+      "name": "size_14vp",
+      "value": "14vp"
     },
     {
       "name": "base_margin",
       "value": "20vp"
     }
+
+
   ]
 }
