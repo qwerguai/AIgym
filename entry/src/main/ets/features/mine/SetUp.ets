@@ -100,7 +100,7 @@ struct SetUp {
       }, (item, idx) => idx.toString())
     }
     .width(StyleConstants.FULL_WIDTH)
-    .margin({ top: StyleConstants.SPACING_SMAIL, bottom: StyleConstants.SPACING_SMAIL })
+    .margin({ top: StyleConstants.SPACING_SMAIL})
     .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
   }
 
@@ -111,7 +111,6 @@ struct SetUp {
         Text(i.title)
           .TextStyle()
           .fontColor(StyleConstants.BASE_STYLE.fontColor)
-
       }
 
       Row() {
