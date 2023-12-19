@@ -1,4 +1,3 @@
-import router from '@ohos.router';
 import { StyleConstants } from '../../common/StyleConstants';
 
 type ILeftIconGroup = {

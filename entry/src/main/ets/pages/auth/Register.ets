@@ -24,7 +24,7 @@ struct Register {
   @State code:string = ''
 
   // 获取验证码
-  @State getCode:ResourceStr = $r('app.string.get_v_code')
+  private  getCode:ResourceStr = $r('app.string.get_v_code')
 
   // 验证码状态
   @State codeStata:boolean = false
