@@ -79,7 +79,14 @@
       "name": "size_14vp",
       "value": "14vp"
     },
-
+    {
+      "name": "size_16vp",
+      "value": "16vp"
+    },
+    {
+      "name": "size_18vp",
+      "value": "18vp"
+    },
     {
       "name": "size_20vp",
       "value": "20vp"

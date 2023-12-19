@@ -7,6 +7,11 @@ export class Constants{
   static readonly LOADING_BG:ResourceStr = $r("app.media.loading")
 
   /**
+   * the back icon
+   */
+  static readonly BACk:ResourceStr = $r('app.media.back')
+
+  /**
    * the mainPage tabBar pages icon url
    */
   static readonly TABBARLIST = [

@@ -12,6 +12,26 @@
       "name": "EntryAbility_label",
       "value": "label"
     },
+
+    {
+      "name":"register",
+      "value": "注册"
+    },
+    {
+      "name": "login",
+      "value": "登录"
+    },
+    {
+      "name": "setup",
+      "value": "设置"
+    },
+    {
+      "name": "logout",
+      "value": "退出账号"
+    },
+
+
+
     {
       "name": "logo_info",
       "value": "相信技术 传递价值"
@@ -63,14 +83,6 @@
     {
       "name": "refresh_code",
       "value": "重新获取"
-    },
-    {
-      "name":"register",
-      "value": "注册"
-    },
-    {
-      "name": "login",
-      "value": "登录"
     },
     {
       "name": "input_empty_tips",

@@ -89,7 +89,7 @@ struct Register {
     Column() {
       HeaderNavigation({
         leftIconGroup: {
-          icon: $r('app.media.back'),
+          icon: Constants.BACk,
           event: () => {
             router.back()
           }

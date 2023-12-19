@@ -25,6 +25,11 @@ export class StyleConstants{
   static readonly SPACING = '20vp'
 
   /**
+   * the common spacing smail size
+   */
+  static readonly SPACING_SMAIL = '8vp'
+
+  /**
    * the width of button
    */
   static  readonly FULL_BUTTON:string = '70%'
@@ -47,7 +52,12 @@ export class StyleConstants{
   /**
    * the baseGrey
    */
-  static readonly BASE_GREY:string = "#f2f2f2"
+  static readonly BASE_GREY:string = "#8a919f"
+
+  /**
+   * the line baseGrey
+   */
+  static readonly LINE_BASE_GREY:string = "#e4e6eb"
 
   /**
    * the tabBar size

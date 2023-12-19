@@ -69,8 +69,8 @@ export default struct HeaderNavigation {
         if (this.middle.title) {
           Text(this.middle.title)
             .fontColor(StyleConstants.BASE_STYLE.fontColor)
-            .fontSize($r('app.float.font_size_24fp'))
-            .fontWeight(FontWeight.Bold)
+            .fontSize($r('app.float.font_size_20fp'))
+            .fontWeight(FontWeight.Medium)
         }
       }
       .width('40%')
@@ -93,7 +93,7 @@ export default struct HeaderNavigation {
 
     }
     .width('100%')
-    .height($r('app.float.size_30vp'))
-
+    .height($r('app.float.size_50vp'))
+    .backgroundColor(StyleConstants.BASE_STYLE.backGroundColor)
   }
 }
