@@ -29,6 +29,10 @@
       "name": "logout",
       "value": "退出账号"
     },
+    {
+      "name": "editorial_material",
+      "value": "编辑资料"
+    },
 
 
 

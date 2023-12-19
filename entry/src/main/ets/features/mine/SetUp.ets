@@ -6,7 +6,7 @@ import HeaderNavigation from '../../CommonComponents/BaseComponents/HeaderNaviga
 type IBlockList = {
   title: string // 主标题
   subTitle?: string // 副标题
-  targetUrl: ResourceStr // 跳转路径
+  targetUrl: ()=>void // 跳转路径
 }
 
 type ISetUpList = {
@@ -17,19 +17,27 @@ type ISetUpList = {
 @Entry
 @Component
 struct SetUp {
-  private setUpList: ISetUpList[] = [
+  @State setUpList: ISetUpList[] = [
     {
       name: 'person',
       children: [
         {
           title: '编辑资料',
           subTitle: '',
-          targetUrl: ''
+          targetUrl: ()=>{
+            router.pushUrl({
+              url:''
+            })
+          }
         },
         {
           title: '账号设置',
           subTitle: '',
-          targetUrl: ''
+          targetUrl:()=>{
+            router.pushUrl({
+              url:''
+            })
+          }
         }
       ]
     },
@@ -39,7 +47,11 @@ struct SetUp {
         {
           title: '深色模式',
           subTitle: '跟随系统',
-          targetUrl: ''
+          targetUrl: ()=>{
+            router.pushUrl({
+              url:''
+            })
+          }
         }
       ]
     },
@@ -49,16 +61,26 @@ struct SetUp {
         {
           title: '检查更新',
           subTitle: '',
-          targetUrl: ''
+          targetUrl: ()=>{
+            router.pushUrl({
+              url:''
+            })
+          }
         },
         {
           title: '关于',
           subTitle: '',
-          targetUrl: ''
+          targetUrl: ()=>{
+            router.pushUrl({
+              url:''
+            })
+          }
         }
       ]
     }
   ]
+
+
 
   build() {
     Column() {
