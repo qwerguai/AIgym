@@ -5,6 +5,8 @@
     "pages/auth/Register",
     "pages/auth/Login",
     "pages/home/Index",
-    "pages/mine/Index"
+    "pages/mine/Index",
+    "pages/article/Index",
+    "pages/community/Index"
   ]
 }

@@ -53,6 +53,6 @@ export class Constants{
   /**
    * search text
    */
-  static readonly SEARCH_TEXT:string = '搜索notion'
+  static readonly SEARCH_TEXT:string = '搜索'
 
 }

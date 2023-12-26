@@ -36,9 +36,7 @@ struct TabPage {
       barPosition: BarPosition.End,
       controller: this.tabsController
     }) {
-      /**
-       * TODO:对于tabBar页面的循环必须严格遵循Constants.TABBARLIST的索引顺序进行条件渲染
-       */
+
       ForEach(Constants.TABBARLIST,(item,idx)=>{
         TabContent() {
           if (idx==0) {

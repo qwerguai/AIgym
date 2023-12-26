@@ -3,7 +3,7 @@
 export default struct Home {
   build() {
     Column() {
-      Text('社区')
+      Text('健身社区')
         .fontColor('#f00')
         .fontSize(16)
         .fontWeight(FontWeight.Medium)

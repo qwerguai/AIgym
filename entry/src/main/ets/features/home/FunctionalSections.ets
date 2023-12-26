@@ -3,7 +3,6 @@ import {homeShowList} from  '../../common/mock'
 
  @Component
 export default struct FunctionalSections {
-  // 后期后端所需板块标识
   @Prop plate:number
 
   build() {
@@ -36,7 +35,7 @@ export default struct FunctionalSections {
                     }
                   .margin({top:$r('app.float.size_10vp'),bottom:$r('app.float.size_10vp')})
 
-                    Text(`${item.title},${item.info}xzvz对方对方的地方第三方范德萨发撒发方法啊发生的`){
+                    Text(`${item.title},${item.info}更多健身课程请联系作者或健身房`){
                     }
                     .width(StyleConstants.FULL_WIDTH)
                     .textAlign(TextAlign.Start)
@@ -103,11 +102,7 @@ export default struct FunctionalSections {
       .margin({top:$r('app.float.size_8vp')})
       .listDirection(Axis.Vertical) // 排列方向
       .edgeEffect(EdgeEffect.Spring) // 滑动到边缘弹性物理动效
-      /**
-       * 触发该事件的条件：列表初始化时会触发一次
-       * List显示区域内第一个子组件的索引值
-       * 最后一个子组件的索引值有变化时会触发。
-       */
+
       .onScrollIndex((firstIndex: number, lastIndex: number) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
