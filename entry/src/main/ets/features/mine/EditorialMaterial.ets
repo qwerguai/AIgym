@@ -35,12 +35,12 @@ struct  EditorialMaterial{
     value:''
   },
   {
-    title:'破壳日',
+    title:'生日',
     value:''
   },
   {
     title:'座右铭',
-    value:'不做烂尾的诗集，我要做禁书里最惊骇世俗的我那—章...'
+    value:'永不言弃！'
   },
 ]
   build(){

@@ -27,32 +27,24 @@ export default struct Home {
       plateId:1
     },
     {
-      title: '后端',
+      title: '减脂',
       plateId:2
     },
     {
-      title: '前端',
+      title: '增肌',
       plateId:3
     },
     {
-      title: 'android',
+      title: '客制化训练',
       plateId:4
     },
-    {
-      title: 'ios',
-      plateId:5
-    },
-    {
-      title: '快速开发',
-      plateId:6
-    }
   ]
 
   // tab构造器
   private tabController: TabsController = new TabsController()
 
   // 搜索
-  @State search: string = ''
+  @State search: string = '大家都在搜：如何健康减脂'
 
   // 设置Search组件控制器。
   private searchController: SearchController = new SearchController()
@@ -66,7 +58,6 @@ export default struct Home {
           .height($r('app.float.size_34vp'))
           .borderRadius($r('app.float.radius_8vp'))
 
-        /**TODO:后期待办或打卡之类的功能 */
         Image($r('app.media.todo'))
           .width($r('app.float.size_30vp'))
           .margin({ left: $r('app.float.size_12vp') })
@@ -78,7 +69,6 @@ export default struct Home {
       Tabs({ barPosition: BarPosition.Start, controller: this.tabController }) {
         ForEach(this.tabBarList,(item,idx)=>{
           TabContent() {
-            /**TODO:严格按照索引顺序 */
             if(item.plateId===0){
                 Follow({plate:item.plateId})// 组件单向通信
             }else {
