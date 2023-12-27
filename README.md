@@ -1,10 +1,10 @@
-# HormanyOs-notion
+# MuscleOS攀登者
 
-#### 🍃介绍🍃
-鸿蒙版《概念笔记》 将完成web端notion到hormanyOs的适配
+# 🍃介绍🍃
+鸿蒙版健身平台，可以交流健身心得，提供健身课程，指定健身计划等
 
 #### ✍软件架构✍
-hormanyOs4.0
+hormanyOS4.0
 
 #### 目录结构
 ```
@@ -15,7 +15,7 @@ hormanyOs4.0
 │  │  ├──utils                           // 工具函数
 │  │  └──StyleConstants                  // 公共样式常量类
 │  ├──CommonComponents                   // 公共组件
-│  │  └──BaseComponents.ets              // 全局基础组件
+│  │  └──BaseComponents             // 全局基础组件
 │  ├──entryability
 │  │  └──EntryAbility.ets	            // 程序入口类
 │  ├──features                          // 功能组件文件夹 以tabBar页面分类
@@ -31,24 +31,6 @@ hormanyOs4.0
 │  │  ├──SplashPage.ets                 // 启动页
 └──entry/src/main/resources	         // 资源文件目录
 ```
-### 🚀参与贡献🚀
-1. Fork 本仓库
-
-2. 欢迎有意者加入开发团队，本人前端，技术热爱狂，希望可以学到更多东西
-
-
-### 🚀特别提示🚀
-1.想找一个类似掘金app端的设计原型图，如果有，私我
-
-2.**本人微信：linhan_0119**
-
-3.再次欢迎各位大佬斧正
-
-
-## ✨star✨
-拉取代码，如果觉得写的还可以，希望留下您的star✨✨✨✨
-
-## 现有的一些效果图(作者找虐,每天赶进度!!! 欢迎斧正 🙊)
 
 ## 加载页
 ![img.png](img.png)
@@ -61,3 +43,6 @@ hormanyOs4.0
 
 ## tabBar切换
 ![img_3.png](img_3.png)
+
+## 页面显示内容
+![img_4.png](img_4.png)
